@@ -62,16 +62,30 @@ Between iterations:
 1) If `.ralph/pause` exists → wait/sleep until removed
 2) If `.ralph/inject.md` exists → append contents to next prompt context, then delete it
 
+## Operator policy (Jon)
+When Jon asks for a Ralph loop:
+- **CLI:** use the CLI Jon requests for that run (do not assume).
+- **Iterations:** pick what’s needed (don’t ask unless ambiguity blocks planning).
+- **Tests:** run automatically after each iteration (use project-appropriate defaults; ask if unknown).
+- **Missing inputs:** if Jon didn’t provide a required detail, **do not start** the loop yet—ask a follow-up.
+
 ## Quickstart (recommended)
 1) Copy `scripts/ralph.sh` → `<project>/ralph.sh` and `chmod +x ralph.sh`.
 2) Copy templates into project root:
    - `templates/AGENTS.md` → `AGENTS.md`
    - `templates/PROMPT.md` → `PROMPT.md`
    - `templates/IMPLEMENTATION_PLAN.md` → `IMPLEMENTATION_PLAN.md`
-3) Optional: create `.ralph/config.json` to configure the loop (CLI, flags, max iterations, tests).
-4) Start the loop:
+3) Create or update `.ralph/config.json` (recommended):
+   - set `cli` to the requested CLI
+   - set `max_iterations` to a reasonable number for the scope
+   - set `test_command` to run after each iteration
+4) Before starting, always **sanitize runtime state**:
+   - remove stale `.ralph/pause`
+   - remove bogus/stale `.ralph/ralph.pid` (e.g., `0` or dead PID)
+   - ensure `.ralph/iterations.jsonl` is valid JSONL
+5) Start the loop:
    - Preferred: Start from **Ralph Dashboard** (so PID/pause/stop controls are consistent).
-   - Or: run `./ralph.sh 20` from the project root.
+   - Or: run `./ralph.sh <max_iterations>` from the project root.
 
 ## Implementation guidance (if you roll your own runner)
 Your runner must:

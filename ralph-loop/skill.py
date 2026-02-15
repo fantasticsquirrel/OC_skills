@@ -31,11 +31,18 @@ def run(input: dict):
                 ".ralph/pending-notification.txt",
                 ".ralph/config.json",
             ],
+            "operator_policy": {
+                "cli": "Use the CLI Jon requests each time.",
+                "iterations": "Pick what’s needed for the scope.",
+                "tests": "Run automatically after each iteration.",
+                "missing_inputs": "If required details are missing, ask follow-up and do NOT start yet.",
+            },
             "quickstart": [
                 "1) Copy scripts/ralph.sh -> <project>/ralph.sh (chmod +x)",
                 "2) Copy templates/* into project root (AGENTS.md, PROMPT.md, IMPLEMENTATION_PLAN.md)",
-                "3) Create <project>/.ralph/config.json (optional) to set cli/flags/max_iterations/test_command",
-                "4) Start from Ralph Dashboard (writes/uses .ralph/ralph.pid) or run ./ralph.sh",
+                "3) Create/update <project>/.ralph/config.json (cli/max_iterations/test_command)",
+                "4) Remove stale .ralph/pause and bogus .ralph/ralph.pid before starting",
+                "5) Start from Ralph Dashboard (preferred) or run ./ralph.sh",
             ],
         }
 
