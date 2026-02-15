@@ -1,6 +1,6 @@
 name: ralph_loop
-version: 1.0.0
-description: Run and manage Ralph Loop projects in the file-based format expected by the Ralph Dashboard (writes .ralph/ runtime files like ralph.log, iterations.jsonl, ralph.pid, pause, inject.md, pending-notification.txt, config.json). Use when setting up a new Ralph loop project, standardizing outputs for dashboard compatibility, or debugging why a project isn't showing correctly in the Ralph Dashboard.
+version: 1.1.0
+description: Generate and run Ralph Loop projects that are fully compatible with the Ralph Dashboard. Includes a ready-to-run scripts/ralph.sh runner plus templates and a strict on-disk .ralph/ contract (ralph.log, iterations.jsonl, ralph.pid, pause, inject.md, pending-notification.txt, config.json). Use when scaffolding new loops, starting/stopping loops, or debugging missing/blank stats in the dashboard.
 
 author: Lil Brudder
 entrypoint: skill.py
