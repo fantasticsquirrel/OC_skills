@@ -1,0 +1,11 @@
+name: multi_app_hosting
+version: 1.0.0
+description: Set up and maintain reusable multi-application hosting on one server using reverse proxy routing, per-app internal ports, and future-proof app onboarding steps.
+
+author: Lil Brudder
+entrypoint: skill.py
+
+permissions:
+  - network
+  - filesystem
+  - process

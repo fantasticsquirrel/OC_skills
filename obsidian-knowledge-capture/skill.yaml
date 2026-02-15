@@ -1,0 +1,9 @@
+name: obsidian_knowledge_capture
+version: 1.0.0
+description: Capture, structure, and store notes in Obsidian using a consistent PARA+MOC schema with normalized frontmatter, clean tags, and summary-first note formatting.
+
+author: Lil Brudder
+entrypoint: skill.py
+
+permissions:
+  - filesystem
