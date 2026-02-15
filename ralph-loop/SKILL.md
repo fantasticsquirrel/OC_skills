@@ -99,12 +99,18 @@ Your runner must:
 - clear stale PID if it’s zombie/dead
 - handle SIGTERM/SIGINT gracefully
 
+## Deployment verification (required when deploying)
+When a loop includes a deployment step (preview or prod), add a post-deploy verification step:
+- Confirm critical static assets return **200** (e.g. `/_next/static/css/*`, `/_next/static/chunks/*`).
+- Take at least one screenshot of a key page (e.g. `/login` + `/`) and compare against the spec/reference.
+- If assets 404 or styling appears un-applied, fix deployment before declaring success.
+
 ## Debug checklist (dashboard not showing your project)
 - Does the project live under one of `RALPH_PROJECT_DIRS`?
 - Does it contain a `.ralph/` directory?
 - Is `.ralph/ralph.pid` present and valid?
 - Is `.ralph/ralph.log` being appended?
-- Is `.ralph/iterations.jsonl` valid JSONL (one JSON per line, no trailing commas)?
+- Is `.ralph/iterations.jsonl` valid JSONL (one JSON object per line, no trailing commas)?
 
 ## Reference
 Ralph Dashboard docs: see the upstream repo `Endogen/ralph-dashboard`.
