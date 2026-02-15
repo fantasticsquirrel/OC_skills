@@ -1,12 +1,27 @@
-"""Ralph Loop skill - dashboard-compatible runtime contract + runbook."""
+"""Ralph Loop skill - dashboard-compatible runtime contract + scaffolding helpers."""
+
+from __future__ import annotations
+
+from pathlib import Path
 
 
 def run(input: dict):
+    """Return guidance/templates for producing Ralph Dashboard-compatible loops.
+
+    Note: OpenClaw skills are advisory; file writes are performed by the agent using exec/write tools.
+    """
+
     action = input.get("action", "guide")
 
     if action == "guide":
         return {
-            "summary": "Ralph loop file contract + control semantics for Ralph Dashboard compatibility.",
+            "summary": "Generate/run a Ralph loop that produces real dashboard stats via .ralph/* artifacts.",
+            "runner_script": "scripts/ralph.sh (copy to your project root as ralph.sh)",
+            "templates": {
+                "AGENTS.md": "templates/AGENTS.md",
+                "PROMPT.md": "templates/PROMPT.md",
+                "IMPLEMENTATION_PLAN.md": "templates/IMPLEMENTATION_PLAN.md",
+            },
             "key_files": [
                 ".ralph/ralph.log",
                 ".ralph/iterations.jsonl",
@@ -16,11 +31,11 @@ def run(input: dict):
                 ".ralph/pending-notification.txt",
                 ".ralph/config.json",
             ],
-            "next_steps": [
-                "Ensure project contains .ralph/ directory",
-                "Emit iteration headers in .ralph/ralph.log",
-                "Append one JSON object per line to .ralph/iterations.jsonl",
-                "Implement pause/inject checks between iterations",
+            "quickstart": [
+                "1) Copy scripts/ralph.sh -> <project>/ralph.sh (chmod +x)",
+                "2) Copy templates/* into project root (AGENTS.md, PROMPT.md, IMPLEMENTATION_PLAN.md)",
+                "3) Create <project>/.ralph/config.json (optional) to set cli/flags/max_iterations/test_command",
+                "4) Start from Ralph Dashboard (writes/uses .ralph/ralph.pid) or run ./ralph.sh",
             ],
         }
 
@@ -49,13 +64,31 @@ def run(input: dict):
 
     if action == "debug":
         return {
+            "why_stats_blank": [
+                "iterations.jsonl not valid JSONL (must be 1 JSON object per line)",
+                "missing required fields (iteration/status/timestamps)",
+                "stale .ralph/pause or bogus .ralph/ralph.pid (e.g., '0')",
+                "loop not started via ralph.sh/dashboard so no PID/log writes",
+            ],
             "checklist": [
                 "Project is under a scanned RALPH_PROJECT_DIRS root",
                 "Project contains .ralph/ directory",
-                ".ralph/ralph.pid exists and PID is live (or clear it)",
-                ".ralph/ralph.log is being appended",
-                ".ralph/iterations.jsonl is valid JSONL (one JSON per line)",
-            ]
+                ".ralph/ralph.pid contains a live PID when running (otherwise remove it)",
+                ".ralph/pause exists only when intentionally paused",
+                ".ralph/ralph.log includes iteration headers",
+                ".ralph/iterations.jsonl is valid JSONL with increasing iteration numbers",
+            ],
         }
 
-    return {"error": f"Unknown action: {action}", "valid_actions": ["guide", "schema", "debug"]}
+    if action == "paths":
+        base = Path("ralph-loop")
+        return {
+            "runner": str(base / "scripts" / "ralph.sh"),
+            "templates": {
+                "AGENTS.md": str(base / "templates" / "AGENTS.md"),
+                "PROMPT.md": str(base / "templates" / "PROMPT.md"),
+                "IMPLEMENTATION_PLAN.md": str(base / "templates" / "IMPLEMENTATION_PLAN.md"),
+            },
+        }
+
+    return {"error": f"Unknown action: {action}", "valid_actions": ["guide", "schema", "debug", "paths"]}
