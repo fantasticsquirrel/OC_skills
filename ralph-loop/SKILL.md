@@ -75,15 +75,18 @@ When Jon asks for a Ralph loop:
    - `templates/AGENTS.md` → `AGENTS.md`
    - `templates/PROMPT.md` → `PROMPT.md`
    - `templates/IMPLEMENTATION_PLAN.md` → `IMPLEMENTATION_PLAN.md`
-3) Create or update `.ralph/config.json` (recommended):
+3) Ensure any required **spec/plan files** are actually present **in the repo AND committed on the branch** before starting.
+   - If you (the operator) generated a spec file during planning, **commit it** first.
+   - If a required spec is missing, **stop and ask** (do not start work based on memory).
+4) Create or update `.ralph/config.json` (recommended):
    - set `cli` to the requested CLI
    - set `max_iterations` to a reasonable number for the scope
    - set `test_command` to run after each iteration
-4) Before starting, always **sanitize runtime state**:
+5) Before starting, always **sanitize runtime state**:
    - remove stale `.ralph/pause`
    - remove bogus/stale `.ralph/ralph.pid` (e.g., `0` or dead PID)
    - ensure `.ralph/iterations.jsonl` is valid JSONL
-5) Start the loop:
+6) Start the loop:
    - Preferred: Start from **Ralph Dashboard** (so PID/pause/stop controls are consistent).
    - Or: run `./ralph.sh <max_iterations>` from the project root.
 
