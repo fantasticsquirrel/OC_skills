@@ -1,0 +1,11 @@
+id: ralph-dashboard
+name: Ralph Dashboard
+version: 1.0.0
+description: Monitor and control Ralph Loop AI agent sessions via the Ralph Dashboard REST API. Check project status, view iterations/stats, start/stop/pause loops, inject instructions, manage plans/specs, and browse git history.
+author: OpenClaw
+tags:
+  - ralph
+  - ai-loops
+  - monitoring
+  - automation
+  - api
