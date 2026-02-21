@@ -1,0 +1,11 @@
+id: web2api-recipes
+name: Web2API Recipe Creator
+version: 1.0.0
+description: Create new Web2API recipes for scraping websites with declarative YAML or custom Python scrapers
+author: OpenClaw
+tags:
+  - scraping
+  - recipes
+  - web2api
+  - yaml
+  - playwright
