@@ -1,0 +1,11 @@
+id: research
+name: Research
+version: 1.0.0
+description: Web research tools including archive.org book search, academic paper lookup, and source verification
+author: OpenClaw
+tags:
+  - research
+  - archive.org
+  - books
+  - academic
+  - sources
