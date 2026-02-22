@@ -36,6 +36,7 @@ When conducting research and producing output, follow these principles:
 6. Cross-reference claims across multiple independent sources when possible
 7. Note the date of source material when relevant (especially for current events)
 8. Distinguish between what is known, what is reported, and what is speculated
+9. **Save all research output to the Obsidian vault** at `/var/lib/openclaw/vault/Research/` using the topic-based structure (see "Storing Research Output" section below)
 
 ### Example Citation Formats
 
@@ -101,6 +102,128 @@ https://archive.is/?run=1&url=https://example.com/article
 5. **Cite all three** in your output (original + both archives)
 
 **Note:** Some sites may block archiving or require manual CAPTCHA completion on archive.is. If automated archiving fails, use browser-based submission.
+
+---
+
+## Storing Research Output
+
+All research findings should be saved to the Obsidian vault for long-term storage and accessibility via the Hub.
+
+### Vault Location
+
+**Server path:** `/var/lib/openclaw/vault/Research/`  
+**Hub access:** https://95.111.254.161/vault  
+**Obsidian access:** https://95.111.254.161/obsidian-launch
+
+### Research Folder Structure
+
+Research notes are organized by **topic** with a standardized structure:
+
+```
+Research/
+  topic-name/
+    _topic.md          # Topic metadata and summary
+    YYYYMMDDTHHMMSS_[hex].md  # Individual research notes (timestamped)
+    YYYYMMDDTHHMMSS_[hex].md
+    ...
+```
+
+### Creating a New Research Topic
+
+1. **Choose a topic name:** Use kebab-case (e.g., `rhone-group-epstein`, `project-mockingbird`, `ufos-1947-roswell`)
+
+2. **Create topic folder:**
+   ```bash
+   mkdir -p /var/lib/openclaw/vault/Research/topic-name
+   ```
+
+3. **Create `_topic.md`** with frontmatter:
+   ```markdown
+   ---
+   title: Topic Name
+   type: research-topic
+   created: 2026-02-22
+   updated: 2026-02-22
+   status: active
+   tags:
+     - research
+     - domain/topic-area
+   ---
+   
+   # Topic Name
+   
+   Brief description of what this research covers.
+   
+   ## Key Questions
+   
+   - What are we investigating?
+   - What connections are we mapping?
+   
+   ## Related Topics
+   
+   - [[other-topic]]
+   - [[another-related-topic]]
+   ```
+
+4. **Add research notes** using timestamped filenames:
+   ```bash
+   # Generate timestamp + random hex
+   TIMESTAMP=$(date +%Y%m%dT%H%M%S)
+   HEX=$(openssl rand -hex 2)
+   NOTE_PATH="/var/lib/openclaw/vault/Research/topic-name/${TIMESTAMP}_${HEX}.md"
+   ```
+
+5. **Note frontmatter template:**
+   ```markdown
+   ---
+   title: Finding Title
+   type: research-note
+   topic: topic-name
+   created: 2026-02-22T13:45:00
+   sources:
+     - https://example.com/article
+   tags:
+     - finding
+     - evidence
+   ---
+   
+   # Finding Title
+   
+   ## Summary
+   
+   Key finding in 1-2 sentences.
+   
+   ## Details
+   
+   Full investigation details with citations.
+   
+   ## Sources
+   
+   - [Article Title](https://example.com/article) ([archive.org](https://web.archive.org/...), [archive.is](https://archive.is/...))
+   - [Another Source](https://example.org/doc) ([archive.org](https://web.archive.org/...), [archive.is](https://archive.is/...))
+   ```
+
+### After Completing Research
+
+1. **Update `_topic.md`** with summary of findings
+2. **Set permissions** (vault is www-data owned):
+   ```bash
+   chown -R www-data:www-data /var/lib/openclaw/vault/Research/topic-name
+   chmod -R 755 /var/lib/openclaw/vault/Research/topic-name
+   ```
+3. **Verify on Hub:** Visit https://95.111.254.161/vault and navigate to Research folder
+4. **Notify Jon** that research is stored and accessible
+
+### Example: Rhône Group Research
+
+Existing example at `/var/lib/openclaw/vault/Research/rhone-group-epstein/`:
+
+- `_topic.md` — Topic overview and key questions
+- `20260218T000001_a1b2.md` — Robert Agostinelli connections
+- `20260218T000002_c3d4.md` — Full member search log
+- `20260218T210000_b5c6.md` — FOII board details, Kafka financial ties, Aznar email
+
+All notes include triple-link citations (original + archive.org + archive.is).
 
 ---
 
