@@ -2,6 +2,50 @@
 
 Provides tools for web research including archive.org book search, academic resources, and source verification.
 
+## Research Guidelines
+
+When conducting research and producing output, follow these principles:
+
+### Output Style
+- **Tone:** Factual and neutral. No editorializing or subjective language.
+- **Speculation:** Label explicitly when presenting credible speculation. Distinguish clearly between confirmed facts and informed inference.
+- **Structure:** Present information clearly with appropriate headings and organization.
+
+### Source Standards
+- **Primary sources preferred:** Government sites (.gov, .mil), academic institutions (.edu), official documents, direct interviews, original publications.
+- **Secondary sources:** Use reputable news organizations, established research institutions, and verified experts.
+- **Wikipedia:** Acceptable as a discovery starting point to find leads, but **do not cite Wikipedia directly in final output**. Instead, follow Wikipedia's citations to the primary sources and cite those.
+- **Archive sources:** When live sites are blocked or inaccessible, use Wayback Machine (archive.org) or archive.ph. Include both the original URL and the archive URL with timestamp.
+
+### Citations
+- **Always cite sources** with clear, clickable links.
+- **Format:** `[Source Name](URL)` or include full URL in text.
+- **Archive links:** When using archived content, cite as:
+  - Original: `https://example.com/article`
+  - Archive: `https://web.archive.org/web/20260101120000/https://example.com/article` (include timestamp)
+- **Attribution:** Clearly attribute quotes, data, and claims to their sources.
+
+### Research Workflow
+1. Start with primary sources when available (.gov, .mil, .edu, official docs)
+2. Use Wikipedia to discover source trails, then cite the original sources
+3. When blocked by paywalls or geo-restrictions, try Wayback Machine or archive.ph
+4. Cross-reference claims across multiple independent sources when possible
+5. Note the date of source material when relevant (especially for current events)
+6. Distinguish between what is known, what is reported, and what is speculated
+
+### Example Citation Formats
+
+**Primary source:**
+> According to the [2025 FBI Crime Report](https://www.fbi.gov/crime-stats/2025), violent crime decreased by 3.2%.
+
+**Archive source:**
+> The original article is no longer available, but an archived version from January 2026 shows [Company XYZ announced layoffs](https://web.archive.org/web/20260115083000/https://example.com/article) affecting 200 employees.
+
+**Multiple sources:**
+> This claim is reported by [Reuters](https://example.com/reuters), [AP](https://example.com/ap), and confirmed in [official documents](https://example.gov/doc.pdf).
+
+---
+
 ## Archive.org Book Search
 
 ### Open Library Search API
