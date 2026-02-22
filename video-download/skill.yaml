@@ -1,0 +1,11 @@
+id: video-download
+name: Video Download
+version: 1.0.0
+description: Download videos from YouTube, TikTok, Twitter, Instagram, Facebook, and 1000+ platforms using yt-dlp. Supports quality selection, audio extraction, playlists, and batch downloads.
+author: OpenClaw
+tags:
+  - video
+  - download
+  - youtube
+  - yt-dlp
+  - media
