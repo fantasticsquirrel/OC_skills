@@ -13,6 +13,7 @@ When conducting research and producing output, follow these principles:
 
 ### Source Standards
 - **Primary sources preferred:** Government sites (.gov, .mil), academic institutions (.edu), official documents, direct interviews, original publications.
+- **First-hand accounts:** Newspaper interviews, social media posts, direct statements, and original content from individuals are acceptable sources. **When an article references someone's post or statement, prefer to find and cite the original post directly** rather than the article about it.
 - **Secondary sources:** Use reputable news organizations, established research institutions, and verified experts.
 - **Wikipedia:** Acceptable as a discovery starting point to find leads, but **do not cite Wikipedia directly in final output**. Instead, follow Wikipedia's citations to the primary sources and cite those.
 - **Archive sources:** When live sites are blocked or inaccessible, use Wayback Machine (archive.org) or archive.ph. Include both the original URL and the archive URL with timestamp.
@@ -20,29 +21,86 @@ When conducting research and producing output, follow these principles:
 ### Citations
 - **Always cite sources** with clear, clickable links.
 - **Format:** `[Source Name](URL)` or include full URL in text.
-- **Archive links:** When using archived content, cite as:
+- **Archive all sources:** For every page you cite, archive it to both archive.org (Wayback Machine) and archive.is, then provide all three links:
   - Original: `https://example.com/article`
-  - Archive: `https://web.archive.org/web/20260101120000/https://example.com/article` (include timestamp)
+  - Archive.org: `https://web.archive.org/web/TIMESTAMP/https://example.com/article`
+  - Archive.is: `https://archive.is/SHORTCODE` (or `https://archive.ph/SHORTCODE`)
 - **Attribution:** Clearly attribute quotes, data, and claims to their sources.
 
 ### Research Workflow
 1. Start with primary sources when available (.gov, .mil, .edu, official docs)
-2. Use Wikipedia to discover source trails, then cite the original sources
-3. When blocked by paywalls or geo-restrictions, try Wayback Machine or archive.ph
-4. Cross-reference claims across multiple independent sources when possible
-5. Note the date of source material when relevant (especially for current events)
-6. Distinguish between what is known, what is reported, and what is speculated
+2. **When an article references a post or statement, locate the original source** (e.g., if an article talks about a tweet, find and cite the actual tweet)
+3. Use Wikipedia to discover source trails, then cite the original sources
+4. **Archive every source you cite** to both archive.org and archive.is immediately after finding it
+5. When blocked by paywalls or geo-restrictions, try Wayback Machine or archive.ph
+6. Cross-reference claims across multiple independent sources when possible
+7. Note the date of source material when relevant (especially for current events)
+8. Distinguish between what is known, what is reported, and what is speculated
 
 ### Example Citation Formats
 
-**Primary source:**
-> According to the [2025 FBI Crime Report](https://www.fbi.gov/crime-stats/2025), violent crime decreased by 3.2%.
+**Primary source with archives:**
+> According to the [2025 FBI Crime Report](https://www.fbi.gov/crime-stats/2025) ([archive.org](https://web.archive.org/web/20260222/https://www.fbi.gov/crime-stats/2025), [archive.is](https://archive.is/AbCdE)), violent crime decreased by 3.2%.
 
-**Archive source:**
-> The original article is no longer available, but an archived version from January 2026 shows [Company XYZ announced layoffs](https://web.archive.org/web/20260115083000/https://example.com/article) affecting 200 employees.
+**First-hand social media post:**
+> In a [Twitter post](https://twitter.com/user/status/123456) ([archive.org](https://web.archive.org/web/20260222/https://twitter.com/user/status/123456), [archive.is](https://archive.is/XyZ12)), the CEO stated "We are committed to transparency."
+
+**News article referencing a post (cite the original):**
+> ❌ **Avoid:** News article says "CEO tweeted about transparency"  
+> ✅ **Prefer:** Locate and cite the [original tweet](https://twitter.com/ceo/status/789) ([archive.org](https://web.archive.org/web/20260222/...), [archive.is](https://archive.is/...)) directly
 
 **Multiple sources:**
-> This claim is reported by [Reuters](https://example.com/reuters), [AP](https://example.com/ap), and confirmed in [official documents](https://example.gov/doc.pdf).
+> This claim is reported by [Reuters](https://example.com/reuters) ([archive.org](https://web.archive.org/web/20260222/...), [archive.is](https://archive.is/...)), [AP](https://example.com/ap) ([archive.org](https://web.archive.org/web/20260222/...), [archive.is](https://archive.is/...)), and confirmed in [official documents](https://example.gov/doc.pdf) ([archive.org](https://web.archive.org/web/20260222/...), [archive.is](https://archive.is/...)).
+
+### How to Archive Pages
+
+For every source you cite, create archives on both platforms:
+
+#### Archive.org (Wayback Machine)
+
+**Save a page:**
+```bash
+# Submit URL for archiving
+curl -X POST "https://web.archive.org/save/https://example.com/article"
+```
+
+**Check if archived:**
+```bash
+# Get most recent snapshot
+curl "https://archive.org/wayback/available?url=https://example.com/article"
+```
+
+**Direct archive link format:**
+```
+https://web.archive.org/web/YYYYMMDDHHMMSS/https://example.com/article
+```
+
+#### Archive.is (archive.ph)
+
+**Save a page:**
+```bash
+# Submit URL for archiving
+curl -X POST "https://archive.ph/submit/" -d "url=https://example.com/article"
+```
+
+**Or visit directly in browser:**
+```
+https://archive.is/?run=1&url=https://example.com/article
+```
+
+**Result:** You'll receive a short URL like `https://archive.is/AbCdE` or `https://archive.ph/XyZ12`
+
+#### Archiving Workflow
+
+1. **Find the source** (original article, post, document)
+2. **Archive to archive.org:** `curl -X POST "https://web.archive.org/save/URL"`
+3. **Archive to archive.is:** Submit via curl or visit `https://archive.is/?run=1&url=URL`
+4. **Retrieve archive links:**
+   - Wayback: Check `https://archive.org/wayback/available?url=URL` for timestamp
+   - Archive.is: Copy the short URL from the result page
+5. **Cite all three** in your output (original + both archives)
+
+**Note:** Some sites may block archiving or require manual CAPTCHA completion on archive.is. If automated archiving fails, use browser-based submission.
 
 ---
 
