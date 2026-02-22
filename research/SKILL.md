@@ -38,6 +38,41 @@ When conducting research and producing output, follow these principles:
 8. Distinguish between what is known, what is reported, and what is speculated
 9. **Save all research output to the Obsidian vault** at `/var/lib/openclaw/vault/Research/` using the topic-based structure (see "Storing Research Output" section below)
 
+### Balanced Investigation: Mainstream + Anomalous Evidence
+
+When researching controversial or fringe topics, follow a two-phase approach:
+
+**Phase 1: Present the Mainstream Narrative Fairly**
+- Document the consensus view from established institutions
+- Include skeptical analyses and debunking efforts
+- Cite peer-reviewed studies and official statements
+- Acknowledge the mainstream position without dismissing it
+- Give credit to valid criticisms and methodological concerns
+
+**Phase 2: Push Past the Narrative to Examine Credible Anomalies**
+- **Do not stop at the consensus** — look for primary evidence that may contradict or complicate it
+- Seek out peer-reviewed research that presents anomalous findings
+- Find credible researchers/scientists who document unexplained phenomena
+- Look for physical evidence, measurements, and data (not just anecdotes)
+- Examine whether debunking efforts actually address all the evidence or only cherry-pick easy targets
+- Distinguish between:
+  - **Crackpot theories** (no evidence, wild speculation, conspiracy for its own sake)
+  - **Credible anomalies** (documented physical evidence, peer review, statistical significance, expert analysis)
+
+**Evaluation Criteria for Anomalous Claims:**
+- ✅ **Strong evidence:** Peer-reviewed publications, lab measurements, statistical significance, expert review, replicable effects
+- ✅ **Moderate evidence:** Multiple independent eyewitnesses, physical traces, documented patterns, professional analysis
+- ⚠️ **Weak evidence:** Single anecdotes, no physical evidence, unfalsifiable claims, appeals to secrecy
+- ❌ **Dismiss:** No evidence, contradicts known physics without explanation, relies solely on conspiracy thinking
+
+**Example: Crop Circles**
+- **Mainstream:** All human hoaxes, no credible evidence for non-human origin (cite Skeptical Inquirer, debunking articles)
+- **Anomalies:** BLT Research published in *Physiologia Plantarum*, XRD study showing unprecedented clay crystallization, node elongation with 95%+ statistical significance, reviewed by world-class mineralogist
+- **Fair conclusion:** Many/most are hoaxes, but subset shows physical evidence requiring explanation; independent replication needed
+
+**The Goal:**
+Present BOTH the mainstream view AND credible anomalous evidence. Let the reader see the full picture. Don't dismiss anomalies just because they're "fringe," and don't embrace them without evidence. **Follow the data, not the narrative.**
+
 ### Example Citation Formats
 
 **Primary source with archives:**
