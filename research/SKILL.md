@@ -10,6 +10,18 @@ When conducting research and producing output, follow these principles:
 - **Tone:** Factual and neutral. No editorializing or subjective language.
 - **Speculation:** Label explicitly when presenting credible speculation. Distinguish clearly between confirmed facts and informed inference.
 - **Structure:** Present information clearly with appropriate headings and organization.
+- **No monologue in research notes:** Do not include internal thought process, scratch reasoning, or tool-debug narration in user-facing research notes.
+
+### Agent Notes Policy (Required)
+- Put process-only comments, fetch blockers, uncertainty logs, and investigative scratch notes in a separate sibling note ending with `_agentnotes.md`.
+- Example: if the main note is `monsanto-papers_roundup_california-groundskeeper.md`, the process note should be `monsanto-papers_roundup_california-groundskeeper_agentnotes.md`.
+- Main research notes should contain only:
+  1) findings,
+  2) evidence/citations,
+  3) explicit confidence labels,
+  4) clear open questions.
+- Keep `_agentnotes.md` concise and operational (what could not be fetched, why, and next retrieval attempt).
+- If there is no process/uncertainty content, do not create `_agentnotes.md`.
 
 ### Source Standards
 - **Primary sources preferred:** Government sites (.gov, .mil), academic institutions (.edu), official documents, direct interviews, original publications.
@@ -20,6 +32,8 @@ When conducting research and producing output, follow these principles:
 
 ### Citations
 - **Always cite sources** with clear, clickable links.
+- **Units required:** Every numeric value must include units (e.g., ppm, ppb, mg/kg, %, lbs, ft, °C).
+- **Unit glossary linking:** On first use of each unit in a note, link it to the vault unit glossary: `[[unit-glossary|Unit Glossary]]`.
 - **Format:** `[Source Name](URL)` or include full URL in text.
 - **Archive all sources:** For every page you cite, archive it to both archive.org (Wayback Machine) and archive.is, then provide all three links:
   - Original: `https://example.com/article`
