@@ -1,3 +1,8 @@
+---
+name: research
+description: Investigate claims using primary sources first, verify with independent reporting, preserve citations/archives, and store structured research notes in the Hub/Obsidian vault. Use when Jon asks for deep-dive investigations, fact-checking, timelines, source-of-truth analysis, or controversy resolution.
+---
+
 # Research Skill
 
 Provides tools for web research including archive.org book search, academic resources, and source verification.

@@ -1,3 +1,8 @@
+---
+name: web2api-client
+description: Client for the Web2API service to scrape websites via installed recipes. Web2API turns websites into REST APIs using Playwright browser automation. Use when scraping structured data from web pages using existing recipes.
+---
+
 ## Web2API Client Skill
 
 Use the Web2API service to scrape websites via installed recipes. Web2API turns websites into REST APIs using Playwright browser automation and YAML recipe definitions.

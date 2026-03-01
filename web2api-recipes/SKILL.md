@@ -1,3 +1,8 @@
+---
+name: web2api-recipes
+description: Create Web2API scraping recipes to turn any website into a REST API using declarative YAML or custom Python with Playwright. Use when building new web scraping recipes for the Web2API service.
+---
+
 ## Web2API Recipe Creator Skill
 
 Create Web2API scraping recipes to turn any website into a REST API. Recipes use declarative YAML for simple scraping or custom Python for interactive sites.

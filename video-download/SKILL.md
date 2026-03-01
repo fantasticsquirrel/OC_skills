@@ -1,3 +1,8 @@
+---
+name: video-download
+description: Download videos from YouTube, TikTok, Twitter, Instagram, Facebook, Twitch, Bilibili, and 1000+ platforms using yt-dlp. Use when a user wants to download or extract audio from any online video.
+---
+
 # Video Download Skill
 
 Download videos from YouTube, TikTok, Twitter, Instagram, Facebook, Twitch, Bilibili, and 1000+ other platforms using yt-dlp.
