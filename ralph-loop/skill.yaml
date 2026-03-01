@@ -1,6 +1,0 @@
-name: ralph-dashboard
-description: Monitor and control Ralph Loop AI agent sessions via the Ralph Dashboard REST API. Use to check project status, view iterations/stats, start/stop/pause loops, inject instructions, manage plans and specs, and browse git history.
-version: "2.0"
-source: https://github.com/fantasticsquirrel/ralph-dashboard
-dashboard_url: https://95.111.254.161/ralph/
-dashboard_port: 8420

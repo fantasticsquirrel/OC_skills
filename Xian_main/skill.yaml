@@ -1,0 +1,11 @@
+id: xian-main
+name: Xian Smart Contracts
+version: 1.0.0
+description: Write, test, deploy, and integrate Xian blockchain smart contracts using the Contracting Python-subset framework.
+author: OpenClaw
+tags:
+  - xian
+  - blockchain
+  - smart-contracts
+  - contracting
+  - dapp
