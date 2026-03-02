@@ -7,6 +7,11 @@ description: Deterministic visual QA and screenshot workflow for any web UI. Use
 
 ## Default Workflow
 
+Preferred command (bundled in this skill under `scripts/`):
+- `scripts/capture-ui --url <url> --project <name> --selector "<css>" --label before|after`
+
+
+
 1. Preflight
    - Confirm target URL and auth state.
    - Run a quick health check (page opens + key element visible).
@@ -40,6 +45,10 @@ If browser control is unstable:
 1. Retry one clean browser start.
 2. Fall back to repo-local Playwright capture script.
 3. If still blocked, return exact blocker + next action needed.
+
+## Auto-Use Rule
+
+When working on UI tasks, call `scripts/capture-ui` proactively without waiting for user request.
 
 ## Minimum Evidence Standard
 

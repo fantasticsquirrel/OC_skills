@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ $# -lt 1 ]]; then
+  echo "Usage: capture-ui --url <url> [--project name] [--selector css] [--label before|after]"
+  exit 1
+fi
+
+node "$SCRIPT_DIR/capture-ui.mjs" "$@"

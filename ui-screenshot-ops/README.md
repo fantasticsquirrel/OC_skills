@@ -7,6 +7,7 @@ Reusable skill for deterministic visual QA and screenshot workflows.
 - full-page + focused component capture expectations
 - stable file naming/location conventions
 - browser instability fallback guidance
+- bundled command scripts in `scripts/capture-ui` + `scripts/capture-ui.mjs`
 
 ## Output folder convention
 `/tmp/ui-captures/<project>/<YYYY-MM-DD>/`
