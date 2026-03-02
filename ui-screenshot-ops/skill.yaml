@@ -1,0 +1,11 @@
+id: ui-screenshot-ops
+name: UI Screenshot Ops
+version: 1.0.0
+description: Deterministic visual QA and screenshot workflow with before/after capture standards and browser reliability fallback for any project UI work.
+author: OpenClaw
+tags:
+  - ui
+  - screenshot
+  - visual-qa
+  - playwright
+  - automation
