@@ -1,7 +1,7 @@
 id: research
 name: Research
-version: 1.0.0
-description: Web research tools including archive.org book search, academic paper lookup, and source verification
+version: 1.1.0
+description: Web research and timeline generation workflows including source verification, archival citations, and Hub auto-timeline formatting
 author: OpenClaw
 tags:
   - research
@@ -9,3 +9,5 @@ tags:
   - books
   - academic
   - sources
+  - timelines
+  - data-structuring

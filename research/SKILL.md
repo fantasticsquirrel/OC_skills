@@ -57,6 +57,49 @@ When conducting research and producing output, follow these principles:
 8. Distinguish between what is known, what is reported, and what is speculated
 9. **Save all research output to the Obsidian vault** at `/var/lib/openclaw/vault/Research/` using the topic-based structure (see "Storing Research Output" section below)
 
+## Timeline Generation for Hub (Required for timeline work)
+
+When creating timelines for Hub, produce data in **Timeline JSON Standard v1.0**:
+
+```json
+{
+  "title": "...",
+  "description": "...",
+  "tags": ["research", "..."],
+  "events": [
+    {
+      "id": "optional",
+      "date": "YYYY-MM-DD or ISO datetime",
+      "title": "...",
+      "description": "...",
+      "category": "...",
+      "sources": ["https://..."],
+      "confidence": "high|medium|low"
+    }
+  ]
+}
+```
+
+### Timeline rules
+- Prefer JSON for auto-generated timelines; YAML is acceptable for hand-authored notes.
+- Every event must have at minimum `date` + `title`.
+- Keep one event per concrete claim/action (avoid blended mega-events).
+- Always attach at least one source URL for non-trivial events.
+- Keep `confidence` explicit (`high`, `medium`, `low`) based on evidence quality.
+
+### Auto-timeline extraction workflow
+1. Identify event-bearing records (laws, executive actions, incidents, reports)
+2. Normalize dates to accepted formats
+3. Deduplicate near-identical rows
+4. Add concise event titles + one-line description
+5. Attach primary source links first; archive links when possible
+6. Validate schema before saving/publishing
+
+### Hub-generated timeline classes
+- `house-bills-auto`: from bill introduction/action dates
+- `executive-orders-auto`: from publication/signing dates
+- `earthquakes-auto`: from event time in earthquake log
+
 ### Balanced Investigation: Mainstream + Anomalous Evidence
 
 When researching controversial or fringe topics, follow a two-phase approach:
