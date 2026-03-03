@@ -27,6 +27,11 @@ description: Set up and maintain reusable multi-application hosting on one serve
 
 5. Update documentation after every routing change.
    - Update `MULTI_APP_HOSTING_PATTERN.md` with current topology and onboarding checklist.
+   - Update `CURRENT_HOSTING_INVENTORY.md` for the fast “what is hosted right now” view.
+
+6. For quick context recovery in any session.
+   - Read `CURRENT_HOSTING_INVENTORY.md` first.
+   - Then verify with live checks if making changes.
 
 ## Quick Commands
 
