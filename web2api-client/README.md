@@ -7,48 +7,45 @@ Use the Web2API service to scrape websites via installed recipes.
 ```python
 import httpx
 
-# List available recipes
-response = httpx.get("http://localhost:8020/api/sites")
-sites = response.json()
+BASE = "http://localhost:8020"
 
+# List installed recipes
+sites = httpx.get(f"{BASE}/api/sites", timeout=30).json()
 for site in sites:
-    print(f"{site['slug']}: {site['name']}")
-    for endpoint in site['endpoints']:
-        print(f"  - {endpoint['name']}: {endpoint['description']}")
+    print(site["slug"], "->", [e["name"] for e in site["endpoints"]])
 
-# Scrape Hacker News
-response = httpx.get("http://localhost:8020/hackernews/read?page=1")
-data = response.json()
-
-for item in data['items']:
-    print(f"{item['title']}: {item['url']}")
+# Scrape endpoint
+data = httpx.get(f"{BASE}/hackernews/read", params={"page": 1}, timeout=90).json()
+print(len(data.get("items", [])))
 ```
 
-### Command Line
+### Core API
 
-```bash
-# Install a recipe
-curl -X POST http://localhost:8020/api/recipes/manage/install/hackernews
+- `GET /api/sites` — list installed recipes + endpoints
+- `GET /{slug}/{endpoint}` — scrape data (supports `page`, `q`, and declared endpoint params)
+- `POST /{slug}/{endpoint}` — scrape with multipart file upload (`files[]`)
+- `GET /api/recipes/manage` — catalog + installed status
+- `POST /api/recipes/manage/install/{name}` — install recipe
+- `POST /api/recipes/manage/update/{slug}` — update recipe
+- `POST /api/recipes/manage/uninstall/{slug}` — uninstall recipe
+- `POST /api/recipes/manage/enable/{slug}` — enable recipe
+- `POST /api/recipes/manage/disable/{slug}` — disable recipe
 
-# Scrape data
-curl "http://localhost:8020/hackernews/read?page=1" | jq '.items[] | {title, url}'
+### MCP Support (new in Web2API 0.4.x)
 
-# Search
-curl "http://localhost:8020/reddit/search?q=python&page=1" | jq '.items[].title'
-```
+- Native MCP server (Streamable HTTP): `/mcp/`
+- HTTP MCP bridge for non-MCP clients:
+  - `GET /mcp/tools`
+  - `POST /mcp/tools/{tool_name}`
+  - optional filters: `only`, `exclude`, or path-style `/mcp/only/{slugs}/tools`
 
-### Features
-
-- **REST API** — All scraped data via HTTP GET
-- **Caching** — 30s fresh + 120s stale-while-revalidate
-- **Pagination** — Standard `page` parameter
-- **Search** — Query parameter for search endpoints
-- **Management API** — Install/update/uninstall recipes dynamically
+Each installed recipe endpoint is automatically exposed as an MCP tool.
+If an endpoint defines `tool_name` in recipe config, that custom name is used.
 
 ### Service
 
-**Production:** http://localhost:8020  
-**Health:** GET /health  
-**Docs:** GET / (HTML index)
+**Production:** `http://localhost:8020`  
+**Health:** `GET /health`  
+**Docs/UI:** `GET /`
 
-See [SKILL.md](SKILL.md) for full API documentation.
+See [SKILL.md](SKILL.md) for full usage + examples.
