@@ -52,10 +52,11 @@ When conducting research and producing output, follow these principles:
 3. Use Wikipedia to discover source trails, then cite the original sources
 4. **Archive every source you cite** to both archive.org and archive.is immediately after finding it
 5. When blocked by paywalls or geo-restrictions, try Wayback Machine or archive.ph
-6. Cross-reference claims across multiple independent sources when possible
-7. Note the date of source material when relevant (especially for current events)
-8. Distinguish between what is known, what is reported, and what is speculated
-9. **Save all research output to the Obsidian vault** at `/var/lib/openclaw/vault/Research/` using the topic-based structure (see "Storing Research Output" section below)
+6. For scientific papers that remain inaccessible, try the DOI/URL on Sci-Hub (`https://sci-hub.ru/`) as a retrieval fallback, then cite the canonical DOI/publisher page as the primary reference and treat Sci-Hub as access path only
+7. Cross-reference claims across multiple independent sources when possible
+8. Note the date of source material when relevant (especially for current events)
+9. Distinguish between what is known, what is reported, and what is speculated
+10. **Save all research output to the Obsidian vault** at `/var/lib/openclaw/vault/Research/` using the topic-based structure (see "Storing Research Output" section below)
 
 ## Timeline Generation for Hub (Required for timeline work)
 
