@@ -1,0 +1,11 @@
+id: handoff-ready
+name: Handoff Ready
+version: 1.0.0
+description: Standardized session handoff summaries to avoid context overflows using a fixed TL;DR and HANDOFF_READY block
+author: OpenClaw
+tags:
+  - handoff
+  - context
+  - overflow
+  - session-management
+  - productivity
