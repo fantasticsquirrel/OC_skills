@@ -1,6 +1,7 @@
 ---
 name: handoff-ready
 description: Generate standardized handoff summaries when a thread gets long, tool-heavy, or reaches a milestone. Use for context-overflow prevention and smooth /new thread transitions with a fixed, easy-to-scan format.
+user-invocable: true
 ---
 
 # Handoff Ready
