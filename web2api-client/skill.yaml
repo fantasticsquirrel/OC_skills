@@ -1,6 +1,6 @@
 id: web2api-client
 name: Web2API Client
-version: 1.1.0
+version: 1.0.0
 description: Client for the Web2API service to scrape websites via installed recipes
 author: OpenClaw
 tags:
@@ -8,5 +8,3 @@ tags:
   - web
   - api
   - playwright
-  - mcp
-  - automation
